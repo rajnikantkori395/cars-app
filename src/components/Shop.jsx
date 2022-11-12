@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Context } from '../App';
 import { CardDescription, CardImage, CardLink, CardTitle, CardWrapper } from './CarsList.style'
 import { Container, Card } from './Learn.style';
-export const Learn = () => {
+export const Shop = () => {
     const location = useParams();
     const id = location.id;
     const arr = useContext(Context);
@@ -17,7 +17,7 @@ export const Learn = () => {
                     <CardDescription><strong>{element.modelName}</strong> {element.modelType}</CardDescription>
                     <CardImage src={element.imageUrl} alt='image' />
 
-                    <CardLink to={`/shop/${element.id}`}>SHOP</CardLink>
+                    <CardLink to={`/learn/${element.id}`}>LEARN</CardLink>
                 </Card>
             </CardWrapper>
         </Container>

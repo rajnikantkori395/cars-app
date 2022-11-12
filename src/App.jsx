@@ -1,11 +1,13 @@
 
 import './App.css';
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import CarsList from './components/CarsList';
 import Pagination from './components/Pagination';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import jsonData from './cars.json';
-
+import { Learn } from './components/Learn';
+import { Shop } from './components/Shop';
+export const Context = createContext([]);
 function App() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,17 +21,17 @@ function App() {
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = data.slice(firstPostIndex, lastPostIndex);
 
+
   return (
     <BrowserRouter>
-      <div className='App'>
-        <CarsList carsData={currentPosts} />
-        <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} />
-      </div>
+       <Context.Provider value={data}>
       <Routes>
-        <Route path="/learn/:id" element="" />
-        <Route path="/shop/:id" element="" />
+        <Route path='/' element={<CarsList setCurrentPage={setCurrentPage} currentPage={currentPage} carsData={currentPosts} />} />
+          <Route path="/learn/:id" element={<Learn />} />
+          <Route path="/shop/:id" element={<Shop/>} />
       </Routes>
-    </BrowserRouter>
+      </Context.Provider>
+    </BrowserRouter >
 
   );
 }

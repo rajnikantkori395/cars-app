@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import Carousel from 'styled-components-carousel';
 import { Card, CardDescription, CardImage, CardLink, CardTitle, CardWrapper } from './CarsList.style'
+import Pagination from './Pagination';
 
 
-const CarsList = ({ carsData }) => {
+const CarsList = ({ carsData, setCurrentPage, currentPage }) => {
     console.log(carsData);
     var w = window.innerWidth;
     const [screenWidth]=useState(768);
@@ -47,6 +48,7 @@ const CarsList = ({ carsData }) => {
                     </CardWrapper>
                 })
             }
+            <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} />
         </div>
     )
 }

@@ -37,6 +37,7 @@ color: gray;
 
 export const CardLink = styled(Link)`
 font-size: large;
+text-decoration: none;
 color: blue;
 margin: 4em 1em;
 `;
