@@ -1,6 +1,8 @@
 import React from 'react'
-
-const Pagination = ({ setCurrentPage,currentPage }) => {
+import { Button, Section } from './Pagination.style';
+import { ReactComponent as SVGIcon } from "../svg/chevron-circled.svg";
+import { ReactComponent as SVGIcon1 } from "../svg/chevron-circled-pre.svg";
+const Pagination = ({ setCurrentPage, currentPage }) => {
 
     function decrement() {
         setCurrentPage(currentPage - 1);
@@ -9,14 +11,14 @@ const Pagination = ({ setCurrentPage,currentPage }) => {
         setCurrentPage(currentPage + 1);
     }
     return (
-        <div>
-            <button disabled={currentPage === 1 ? true : false} onClick={decrement}>
-                PREVIOUS
-            </button>
-            <button disabled={currentPage === 2 ? true : false} onClick={increment}>
-                NEXT
-            </button>
-        </div>
+        <Section>
+            <Button disabled={currentPage === 1 ? true : false} onClick={decrement}>
+                {<SVGIcon />}
+            </Button>
+            <Button disabled={currentPage === 2 ? true : false} onClick={increment}>
+                {<SVGIcon1 />}
+            </Button>
+        </Section>
     )
 }
 
