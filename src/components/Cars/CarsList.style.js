@@ -20,11 +20,7 @@ export const Card = styled.div`
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }`;
 
-export const CardImage = styled.img`
-    width: 100%;
-    height: auto;
-    display: block;
-`;
+
 export const CardTitle = styled.h4`
     color: grey;
 `;
@@ -35,9 +31,17 @@ export const CardDescription =styled.p`
 color: gray;
 `;
 
+export const CardImage = styled.img`
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1em;
+    
+`;
+
 export const CardLink = styled(Link)`
 font-size: large;
 text-decoration: none;
-color: blue;
-margin: 4em 1em;
+color: #0000f0;
+margin: 5em 1em;
 `;

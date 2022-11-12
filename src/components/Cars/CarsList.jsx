@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Carousel from 'styled-components-carousel';
 import { Card, CardDescription, CardImage, CardLink, CardTitle, CardWrapper } from './CarsList.style'
-import Pagination from './Pagination';
-
+import Pagination from '../Pagination/Pagination';
+// import {ReactComponent as SvgSmall} from '../svg/chevron-small.svg';
 
 const CarsList = ({ carsData, setCurrentPage, currentPage }) => {
     console.log(carsData);
@@ -39,7 +39,7 @@ const CarsList = ({ carsData, setCurrentPage, currentPage }) => {
                 carsData && carsData.map((post) => {
                     return <CardWrapper key={post.id}>
                         <Card>
-                            <CardTitle>{post.bodyType}</CardTitle>
+                            <CardTitle>{post.bodyType.toUpperCase()}</CardTitle>
                             <CardDescription><strong>{post.modelName}</strong> {post.modelType}</CardDescription>
                             <CardImage src={post.imageUrl} alt='image' />
                             <CardLink to={`/learn/${post.id}`}>LEARN</CardLink>

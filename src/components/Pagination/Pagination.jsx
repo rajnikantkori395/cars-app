@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Section } from './Pagination.style';
-import { ReactComponent as SVGIcon } from "../svg/chevron-circled.svg";
-import { ReactComponent as SVGIcon1 } from "../svg/chevron-circled-pre.svg";
+import { ReactComponent as SVGIcon } from "../../svg/chevron-circled.svg";
+import { ReactComponent as SVGIcon1 } from "../../svg/chevron-circled-pre.svg";
 const Pagination = ({ setCurrentPage, currentPage }) => {
 
     function decrement() {

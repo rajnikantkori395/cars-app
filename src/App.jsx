@@ -1,13 +1,14 @@
 
 import './App.css';
 import { createContext, useEffect, useState } from 'react';
-import CarsList from './components/CarsList';
-import Pagination from './components/Pagination';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import jsonData from './cars.json';
-import { Learn } from './components/Learn';
-import { Shop } from './components/Shop';
+import { Learn } from './components/Learn/Learn';
+import { Shop } from './components/Shop/Shop';
+import CarsList from './components/Cars/CarsList';
 export const Context = createContext([]);
+
+
 function App() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,12 +25,12 @@ function App() {
 
   return (
     <BrowserRouter>
-       <Context.Provider value={data}>
-      <Routes>
-        <Route path='/' element={<CarsList setCurrentPage={setCurrentPage} currentPage={currentPage} carsData={currentPosts} />} />
+      <Context.Provider value={data}>
+        <Routes>
+          <Route path='/' element={<CarsList setCurrentPage={setCurrentPage} currentPage={currentPage} carsData={currentPosts} />} />
           <Route path="/learn/:id" element={<Learn />} />
-          <Route path="/shop/:id" element={<Shop/>} />
-      </Routes>
+          <Route path="/shop/:id" element={<Shop />} />
+        </Routes>
       </Context.Provider>
     </BrowserRouter >
 

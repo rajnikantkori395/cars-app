@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { Context } from '../App';
-import { CardDescription, CardImage, CardLink, CardTitle, CardWrapper } from './CarsList.style'
-import { Container, Card } from './Learn.style';
+import { Context } from '../../App';
+import { CardDescription, CardImage, CardLink, CardTitle, CardWrapper } from '../Cars/CarsList.style'
+import { Container, Card } from '../Learn/Learn.style';
+// import {ReactComponent as SvgSmall} from '../svg/chevron-small.svg';
 export const Shop = () => {
     const location = useParams();
     const id = location.id;
@@ -16,8 +17,8 @@ export const Shop = () => {
                     <CardTitle>{element.bodyType}</CardTitle>
                     <CardDescription><strong>{element.modelName}</strong> {element.modelType}</CardDescription>
                     <CardImage src={element.imageUrl} alt='image' />
-
                     <CardLink to={`/learn/${element.id}`}>LEARN</CardLink>
+                    <CardLink to='/'>HOME </CardLink>
                 </Card>
             </CardWrapper>
         </Container>

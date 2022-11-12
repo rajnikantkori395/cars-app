@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 display: flex;
-    
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
@@ -10,8 +9,7 @@ display: flex;
     @media (max-width: 768px) {
         width:100%;
      
-    }
-    
+    }  
 `;
 
 export const Card = styled.div`
